@@ -1,4 +1,5 @@
 # Python Specifications
+[![Build Status](https://secure.travis-ci.org/dalanhurst/python-specifications.png)](http://travis-ci.org/dalanhurst/python-specifications)
 
 An implementation of ["Specifications" by Eric Evans and Martin Fowler](http://www.martinfowler.com/apsupp/spec.pdf) in Python.
 
