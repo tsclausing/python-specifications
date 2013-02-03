@@ -50,6 +50,6 @@ It is also useful to compare one specification to another.
     reached using B to A, hence B can subsume A."
 
 However, subsumption on a composite specification appears to be NP-hard. See
-(Boolean satisfiability problem)[http://en.wikipedia.org/wiki/Boolean_satisfiability_problem]
-and (this StackOverflow question)[http://stackoverflow.com/questions/13713664/extending-linq-based-specification-pattern-to-implement-subsumption]
+[Boolean satisfiability problem](http://en.wikipedia.org/wiki/Boolean_satisfiability_problem)
+and [this StackOverflow question](http://stackoverflow.com/questions/13713664/extending-linq-based-specification-pattern-to-implement-subsumption)
 for more.
