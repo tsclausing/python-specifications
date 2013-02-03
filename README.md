@@ -13,6 +13,7 @@ One of the most useful things a specification can do is determine if a given
 candidate satisfies a list of requirements defined in the specification. For
 example:
 
+    ```python
     from specs.specs import Composite
 
     class Person(object):
@@ -36,5 +37,19 @@ example:
 
     assert spec.is_satisfied_by(Person()) == False
     assert spec.is_satisfied_by(Werewolf()) == True
+    ```
 
 Checkout tests/vampire_test.py for a more involved example of Satisfaction.
+
+## Subsumption
+It is also useful to compare one specification to another.
+
+    "Specification B is a special case of Specification A if and only if for any
+    possible candidate object X, where A is satisfied by X, B will always be
+    satisfied by X also. If this is true, it is possible to apply any conclusion
+    reached using B to A, hence B can subsume A."
+
+However, subsumption on a composite specification appears to be NP-hard. See
+(Boolean satisfiability problem)[http://en.wikipedia.org/wiki/Boolean_satisfiability_problem]
+and (this StackOverflow question)[http://stackoverflow.com/questions/13713664/extending-linq-based-specification-pattern-to-implement-subsumption]
+for more.

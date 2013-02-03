@@ -80,7 +80,7 @@ class Composite(Satisfaction):
         return self.negate()
 
 
-class Conjunction(Composite, Satisfaction):
+class Conjunction(Composite):
     """Represents a logical conjunction (AND)"""
 
     def __init__(self, left, right):
@@ -88,11 +88,12 @@ class Conjunction(Composite, Satisfaction):
         self.right = right
 
     def is_satisfied_by(self, candidate):
-        return (self.left.is_satisfied_by(candidate)
-                and self.right.is_satisfied_by(candidate))
+        return bool(
+            self.left.is_satisfied_by(candidate)
+            and self.right.is_satisfied_by(candidate))
 
 
-class Disjunction(Composite, Satisfaction):
+class Disjunction(Composite):
     """Represents a logical disjunction (OR)"""
 
     def __init__(self, left, right):
@@ -100,11 +101,12 @@ class Disjunction(Composite, Satisfaction):
         self.right = right
 
     def is_satisfied_by(self, candidate):
-        return (self.left.is_satisfied_by(candidate)
-                or self.right.is_satisfied_by(candidate))
+        return bool(
+            self.left.is_satisfied_by(candidate)
+            or self.right.is_satisfied_by(candidate))
 
 
-class Negation(Composite, Satisfaction):
+class Negation(Composite):
     """Represents a logical negation (NOT)"""
 
     def __init__(self, spec):

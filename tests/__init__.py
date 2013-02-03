@@ -52,29 +52,6 @@ class Werewolf(Person):
         self.can_be_killed_by_stake_through_the_heart = False
 
 
-class Zombie(Person):
-    def __init__(self):
-        super(Zombie, self).__init__()
-        self.can_have_roommates = False
-        self.is_always_monsterous = True
-        self.can_be_killed_by_immolation = False
-        self.can_be_killed_by_old_age = False
-        self.can_be_killed_by_stake_through_the_heart = False
-        self.can_be_killed_by_silver_bullet = False
-
-
-class JasonVoorhees(Person):
-    def __init__(self):
-        super(JasonVoorhees, self).__init__()
-        self.can_have_roommates = False
-        self.is_always_monsterous = True
-        self.can_be_killed_by_decapitation = False
-        self.can_be_killed_by_immolation = False
-        self.can_be_killed_by_old_age = False
-        self.can_be_killed_by_silver_bullet = False
-        self.can_be_killed_by_stake_through_the_heart = False
-
-
 class CanHaveRoommates(Composite):
     def is_satisfied_by(self, person):
         return person.can_have_roommates
