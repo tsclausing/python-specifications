@@ -13,31 +13,31 @@ One of the most useful things a specification can do is determine if a given
 candidate satisfies a list of requirements defined in the specification. For
 example:
 
-    ```python
-    from specs.specs import Composite
+```python
+from specs.specs import Composite
 
-    class Person(object):
-        def __init__(self):
-            self.changes_form_by_light_of_the_full_moon = False
+class Person(object):
+    def __init__(self):
+        self.changes_form_by_light_of_the_full_moon = False
 
-    class Werewolf(Person):
-        def __init__(self):
-            super(Werewolf, self).__init__()
-            self.changes_form_by_light_of_the_full_moon = True
+class Werewolf(Person):
+    def __init__(self):
+        super(Werewolf, self).__init__()
+        self.changes_form_by_light_of_the_full_moon = True
 
-    class IsHuman(Composite):
-        def is_satisfied_by(self, candidate):
-            return isinstance(candidate, Person)
+class IsHuman(Composite):
+    def is_satisfied_by(self, candidate):
+        return isinstance(candidate, Person)
 
-    class FormAffectedByFullMoon(Composite):
-        def is_satisfied_by(self, candidate):
-            return candidate.changes_form_by_light_of_the_full_moon
+class FormAffectedByFullMoon(Composite):
+    def is_satisfied_by(self, candidate):
+        return candidate.changes_form_by_light_of_the_full_moon
 
-    spec = IsHuman() & FormAffectedByFullMoon()
+spec = IsHuman() & FormAffectedByFullMoon()
 
-    assert spec.is_satisfied_by(Person()) == False
-    assert spec.is_satisfied_by(Werewolf()) == True
-    ```
+assert spec.is_satisfied_by(Person()) == False
+assert spec.is_satisfied_by(Werewolf()) == True
+```
 
 Checkout tests/vampire_test.py for a more involved example of Satisfaction.
 
