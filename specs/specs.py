@@ -30,9 +30,11 @@ class Composite(Satisfaction):
             >>> assert isinstance(s, Conjunction)
         """
         return Conjunction(self, other)
+
     def and_(self, other):
         """Short-hand conjunction"""
         return self.conjoin(other)
+
     def __and__(self, other):
         """Bitwise subversion: conjunction"""
         return self.conjoin(other)
@@ -51,9 +53,11 @@ class Composite(Satisfaction):
             >>> assert isinstance(s, Disjunction)
         """
         return Disjunction(self, other)
+
     def or_(self, other):
         """Short-hand disjunction"""
         return self.disjoin(other)
+
     def __or__(self, other):
         """Bitwise subversion: disjunction"""
         return self.disjoin(other)
@@ -72,9 +76,11 @@ class Composite(Satisfaction):
             >>> assert isinstance(s, Negation)
         """
         return Negation(self)
+
     def not_(self):
         """Short-hand negation"""
         return self.negate()
+
     def __invert__(self):
         """Bitwise subversion: negation"""
         return self.negate()
