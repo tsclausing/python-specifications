@@ -1,6 +1,6 @@
 # Python Specifications
 [![Build Status](https://secure.travis-ci.org/dalanhurst/python-specifications.png)](http://travis-ci.org/dalanhurst/python-specifications)
-[![Downloads](https://pypip.in/v/recall/badge.png)](https://crate.io/packages/recall)
+[![Downloads](https://pypip.in/v/specifications/badge.png)](https://crate.io/packages/specifications)
 
 An implementation of ["Specifications" by Eric Evans and Martin Fowler](http://www.martinfowler.com/apsupp/spec.pdf) in Python.
 
@@ -17,7 +17,7 @@ example:
 ```python
 from specs.specs import Composite
 
-\# Create some objects to test
+# Create some objects to test
 class Person(object):
     def __init__(self):
         self.changes_form_by_light_of_the_full_moon = False
@@ -27,7 +27,7 @@ class Werewolf(Person):
         super(Werewolf, self).__init__()
         self.changes_form_by_light_of_the_full_moon = True
 
-\# Create the specification
+# Create the specification
 class IsHuman(Composite):
     def is_satisfied_by(self, candidate):
         return isinstance(candidate, Person)
